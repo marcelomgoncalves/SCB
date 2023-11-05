@@ -1,0 +1,2779 @@
+object frmImpressaoCartelas: TfrmImpressaoCartelas
+  Left = 388
+  Height = 502
+  Top = 250
+  Width = 924
+  BorderIcons = []
+  BorderStyle = bsNone
+  Caption = 'Impressão de Cartelas de Bingo'
+  ClientHeight = 463
+  ClientWidth = 908
+  KeyPreview = True
+  OnCreate = FormCreate
+  OnKeyPress = FormKeyPress
+  Position = poMainFormCenter
+  object Panel1: TPanel
+    Left = 0
+    Height = 37
+    Top = 0
+    Width = 908
+    Align = alTop
+    BevelOuter = bvNone
+    Caption = 'IMPRESSÃO DE CARTELAS'
+    ClientHeight = 37
+    ClientWidth = 908
+    Color = clMenuHighlight
+    Font.Color = clWhite
+    Font.Height = -21
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 1
+    object bt_fechar: TSpeedButton
+      Left = 879
+      Height = 31
+      Hint = 'Sair da Tela'
+      Top = 5
+      Width = 30
+      Anchors = [akTop, akRight]
+      BorderSpacing.CellAlignHorizontal = ccaCenter
+      BorderSpacing.CellAlignVertical = ccaCenter
+      Caption = 'X'
+      Color = clRed
+      Flat = True
+      Font.Color = clWhite
+      Font.Height = -21
+      Font.Style = [fsBold]
+      Transparent = False
+      OnClick = bt_fecharClick
+      ParentFont = False
+    end
+  end
+  object JvPanel1: TJvPanel
+    Left = 0
+    Height = 91
+    Top = 37
+    Width = 908
+    Align = alTop
+    TabOrder = 0
+    OnClick = JvPanel1Click
+    object edInicial: TEdit
+      Left = 29
+      Height = 23
+      Top = 43
+      Width = 80
+      TabOrder = 0
+    end
+    object edFinal: TEdit
+      Left = 149
+      Height = 23
+      Top = 43
+      Width = 80
+      TabOrder = 1
+    end
+    object Label1: TLabel
+      Left = 27
+      Height = 15
+      Top = 26
+      Width = 71
+      Caption = 'Cartela Inicial'
+      ParentColor = False
+    end
+    object Label2: TLabel
+      Left = 149
+      Height = 15
+      Top = 26
+      Width = 65
+      Caption = 'Cartela Final'
+      ParentColor = False
+    end
+    object bt_Imprimir: TBitBtn
+      Left = 269
+      Height = 30
+      Top = 36
+      Width = 96
+      Caption = '&Imprimir'
+      OnClick = bt_ImprimirClick
+      TabOrder = 2
+    end
+  end
+  object repCartelas: TRLReport
+    Left = 16
+    Height = 1123
+    Top = 152
+    Width = 794
+    DataSource = dsImpCartelas
+    Font.Color = clBlack
+    Font.Height = -13
+    Font.Name = 'Arial'
+    Visible = False
+    object RLBand1: TRLBand
+      Left = 38
+      Height = 32
+      Top = 38
+      Width = 718
+      BandType = btHeader
+      Borders.Sides = sdCustom
+      Borders.DrawLeft = False
+      Borders.DrawTop = False
+      Borders.DrawRight = False
+      Borders.DrawBottom = True
+      object lbl_evento: TRLLabel
+        Left = 0
+        Height = 23
+        Top = 0
+        Width = 718
+        Align = faTop
+        Alignment = taCenter
+        Caption = 'TESTE'
+        Font.Color = clBlack
+        Font.Height = -21
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+    end
+    object RLBand2: TRLBand
+      Left = 38
+      Height = 944
+      Top = 70
+      Width = 718
+      AfterPrint = RLBand2AfterPrint
+      object RLDraw1: TRLDraw
+        Left = 21
+        Height = 192
+        Top = 95
+        Width = 203
+        Borders.Sides = sdCustom
+        Borders.DrawLeft = False
+        Borders.DrawTop = False
+        Borders.DrawRight = False
+        Borders.DrawBottom = False
+        Color = clMoneyGreen
+        ParentColor = False
+        Transparent = False
+      end
+      object RLDraw2: TRLDraw
+        Left = 22
+        Height = 6
+        Top = 168
+        Width = 201
+        DrawKind = dkLine
+      end
+      object RLDraw3: TRLDraw
+        Left = 22
+        Height = 5
+        Top = 131
+        Width = 201
+        DrawKind = dkLine
+      end
+      object RLDraw4: TRLDraw
+        Left = 23
+        Height = 3
+        Top = 207
+        Width = 201
+        DrawKind = dkLine
+      end
+      object RLDraw5: TRLDraw
+        Left = 22
+        Height = 1
+        Top = 247
+        Width = 201
+        DrawKind = dkLine
+      end
+      object RLDraw6: TRLDraw
+        Left = 61
+        Height = 190
+        Top = 95
+        Width = 1
+        Angle = 90
+        DrawData.Strings = (
+          '1 0'
+          '0 0'
+        )
+        DrawKind = dkCustom
+      end
+      object RLDraw7: TRLDraw
+        Left = 101
+        Height = 191
+        Top = 95
+        Width = 2
+        Angle = 90
+        DrawData.Strings = (
+          '1 0'
+          '0 0'
+        )
+        DrawKind = dkCustom
+      end
+      object RLDraw8: TRLDraw
+        Left = 142
+        Height = 190
+        Top = 96
+        Width = 2
+        Angle = 90
+        DrawData.Strings = (
+          '1 0'
+          '0 0'
+        )
+        DrawKind = dkCustom
+      end
+      object RLDraw9: TRLDraw
+        Left = 183
+        Height = 190
+        Top = 96
+        Width = 2
+        Angle = 90
+        DrawData.Strings = (
+          '1 0'
+          '0 0'
+        )
+        DrawKind = dkCustom
+      end
+      object DBE1: TRLDBText
+        Left = 32
+        Height = 16
+        Top = 106
+        Width = 20
+        Alignment = taCenter
+        DataField = 'B1'
+        DataSource = dsImpCartelas
+      end
+      object DBE2: TRLDBText
+        Left = 76
+        Height = 16
+        Top = 106
+        Width = 14
+        Alignment = taCenter
+        DataField = 'I1'
+        DataSource = dsImpCartelas
+      end
+      object DBE3: TRLDBText
+        Left = 113
+        Height = 16
+        Top = 106
+        Width = 20
+        Alignment = taCenter
+        DataField = 'N1'
+        DataSource = dsImpCartelas
+      end
+      object DBE4: TRLDBText
+        Left = 152
+        Height = 16
+        Top = 106
+        Width = 22
+        Alignment = taCenter
+        DataField = 'G1'
+        DataSource = dsImpCartelas
+      end
+      object DBE5: TRLDBText
+        Left = 193
+        Height = 16
+        Top = 106
+        Width = 22
+        Alignment = taCenter
+        DataField = 'O1'
+        DataSource = dsImpCartelas
+      end
+      object DBE6: TRLDBText
+        Left = 32
+        Height = 16
+        Top = 144
+        Width = 20
+        Alignment = taCenter
+        DataField = 'B2'
+        DataSource = dsImpCartelas
+      end
+      object DBE7: TRLDBText
+        Left = 75
+        Height = 16
+        Top = 144
+        Width = 14
+        Alignment = taCenter
+        DataField = 'I2'
+        DataSource = dsImpCartelas
+      end
+      object DBE8: TRLDBText
+        Left = 113
+        Height = 16
+        Top = 144
+        Width = 20
+        Alignment = taCenter
+        DataField = 'N2'
+        DataSource = dsImpCartelas
+      end
+      object DBE9: TRLDBText
+        Left = 152
+        Height = 16
+        Top = 144
+        Width = 22
+        Alignment = taCenter
+        DataField = 'G2'
+        DataSource = dsImpCartelas
+      end
+      object DBE10: TRLDBText
+        Left = 193
+        Height = 16
+        Top = 144
+        Width = 22
+        Alignment = taCenter
+        DataField = 'O2'
+        DataSource = dsImpCartelas
+      end
+      object DBE11: TRLDBText
+        Left = 32
+        Height = 16
+        Top = 182
+        Width = 20
+        Alignment = taCenter
+        DataField = 'B3'
+        DataSource = dsImpCartelas
+      end
+      object DBE12: TRLDBText
+        Left = 75
+        Height = 16
+        Top = 183
+        Width = 14
+        Alignment = taCenter
+        DataField = 'I3'
+        DataSource = dsImpCartelas
+      end
+      object DBE13: TRLDBText
+        Left = 113
+        Height = 16
+        Top = 182
+        Width = 20
+        Alignment = taCenter
+        DataField = 'N3'
+        DataSource = dsImpCartelas
+      end
+      object DBE14: TRLDBText
+        Left = 152
+        Height = 16
+        Top = 182
+        Width = 22
+        Alignment = taCenter
+        DataField = 'G3'
+        DataSource = dsImpCartelas
+      end
+      object DBE15: TRLDBText
+        Left = 193
+        Height = 16
+        Top = 182
+        Width = 22
+        Alignment = taCenter
+        DataField = 'O3'
+        DataSource = dsImpCartelas
+      end
+      object DBE16: TRLDBText
+        Left = 32
+        Height = 16
+        Top = 219
+        Width = 20
+        Alignment = taCenter
+        DataField = 'B4'
+        DataSource = dsImpCartelas
+      end
+      object DBE17: TRLDBText
+        Left = 75
+        Height = 16
+        Top = 219
+        Width = 14
+        Alignment = taCenter
+        DataField = 'I4'
+        DataSource = dsImpCartelas
+      end
+      object DBE18: TRLDBText
+        Left = 113
+        Height = 16
+        Top = 219
+        Width = 20
+        Alignment = taCenter
+        DataField = 'N4'
+        DataSource = dsImpCartelas
+      end
+      object DBE19: TRLDBText
+        Left = 152
+        Height = 16
+        Top = 219
+        Width = 22
+        Alignment = taCenter
+        DataField = 'G4'
+        DataSource = dsImpCartelas
+      end
+      object DBE20: TRLDBText
+        Left = 193
+        Height = 16
+        Top = 219
+        Width = 22
+        Alignment = taCenter
+        DataField = 'O4'
+        DataSource = dsImpCartelas
+      end
+      object DBE21: TRLDBText
+        Left = 32
+        Height = 16
+        Top = 259
+        Width = 20
+        Alignment = taCenter
+        DataField = 'B5'
+        DataSource = dsImpCartelas
+      end
+      object DBE22: TRLDBText
+        Left = 75
+        Height = 16
+        Top = 259
+        Width = 14
+        Alignment = taCenter
+        DataField = 'I5'
+        DataSource = dsImpCartelas
+      end
+      object DBE23: TRLDBText
+        Left = 113
+        Height = 16
+        Top = 259
+        Width = 20
+        Alignment = taCenter
+        DataField = 'N5'
+        DataSource = dsImpCartelas
+      end
+      object DBE24: TRLDBText
+        Left = 152
+        Height = 16
+        Top = 259
+        Width = 22
+        Alignment = taCenter
+        DataField = 'G5'
+        DataSource = dsImpCartelas
+      end
+      object DBE25: TRLDBText
+        Left = 193
+        Height = 16
+        Top = 259
+        Width = 22
+        Alignment = taCenter
+        DataField = 'O5'
+        DataSource = dsImpCartelas
+      end
+      object lbl_Premio1: TRLLabel
+        Left = 21
+        Height = 22
+        Top = 41
+        Width = 203
+        Alignment = taCenter
+        AutoSize = False
+        Caption = '1º PRÊMIO'
+        Font.Color = clBlack
+        Font.Height = -19
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object RLDraw46: TRLDraw
+        Left = 21
+        Height = 32
+        Top = 64
+        Width = 203
+      end
+      object RLLabel1: TRLLabel
+        Left = 35
+        Height = 16
+        Top = 71
+        Width = 13
+        Caption = 'B'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object RLLabel2: TRLLabel
+        Left = 79
+        Height = 16
+        Top = 71
+        Width = 8
+        Caption = 'I'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object RLLabel3: TRLLabel
+        Left = 116
+        Height = 16
+        Top = 71
+        Width = 13
+        Caption = 'N'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object RLLabel4: TRLLabel
+        Left = 156
+        Height = 16
+        Top = 71
+        Width = 14
+        Caption = 'G'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object RLLabel5: TRLLabel
+        Left = 197
+        Height = 16
+        Top = 71
+        Width = 14
+        Caption = 'O'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object RLDraw47: TRLDraw
+        Left = 61
+        Height = 29
+        Top = 65
+        Width = 2
+        Angle = 90
+        DrawData.Strings = (
+          '1 0'
+          '0 0'
+        )
+        DrawKind = dkCustom
+      end
+      object RLDraw48: TRLDraw
+        Left = 101
+        Height = 30
+        Top = 65
+        Width = 2
+        Angle = 90
+        DrawData.Strings = (
+          '1 0'
+          '0 0'
+        )
+        DrawKind = dkCustom
+      end
+      object RLDraw49: TRLDraw
+        Left = 142
+        Height = 30
+        Top = 65
+        Width = 2
+        Angle = 90
+        DrawData.Strings = (
+          '1 0'
+          '0 0'
+        )
+        DrawKind = dkCustom
+      end
+      object RLDraw50: TRLDraw
+        Left = 183
+        Height = 30
+        Top = 65
+        Width = 2
+        Angle = 90
+        DrawData.Strings = (
+          '1 0'
+          '0 0'
+        )
+        DrawKind = dkCustom
+      end
+      object RLDraw10: TRLDraw
+        Left = 496
+        Height = 192
+        Top = 93
+        Width = 203
+        Borders.Sides = sdCustom
+        Borders.DrawLeft = False
+        Borders.DrawTop = False
+        Borders.DrawRight = False
+        Borders.DrawBottom = False
+        Color = clMoneyGreen
+        ParentColor = False
+        Transparent = False
+      end
+      object RLDraw11: TRLDraw
+        Left = 497
+        Height = 6
+        Top = 166
+        Width = 201
+        DrawKind = dkLine
+      end
+      object RLDraw12: TRLDraw
+        Left = 497
+        Height = 5
+        Top = 129
+        Width = 201
+        DrawKind = dkLine
+      end
+      object RLDraw13: TRLDraw
+        Left = 498
+        Height = 3
+        Top = 205
+        Width = 201
+        DrawKind = dkLine
+      end
+      object RLDraw14: TRLDraw
+        Left = 497
+        Height = 1
+        Top = 245
+        Width = 201
+        DrawKind = dkLine
+      end
+      object RLDraw15: TRLDraw
+        Left = 536
+        Height = 190
+        Top = 93
+        Width = 1
+        Angle = 90
+        DrawData.Strings = (
+          '1 0'
+          '0 0'
+        )
+        DrawKind = dkCustom
+      end
+      object RLDraw16: TRLDraw
+        Left = 576
+        Height = 191
+        Top = 93
+        Width = 2
+        Angle = 90
+        DrawData.Strings = (
+          '1 0'
+          '0 0'
+        )
+        DrawKind = dkCustom
+      end
+      object RLDraw17: TRLDraw
+        Left = 617
+        Height = 190
+        Top = 94
+        Width = 2
+        Angle = 90
+        DrawData.Strings = (
+          '1 0'
+          '0 0'
+        )
+        DrawKind = dkCustom
+      end
+      object RLDraw18: TRLDraw
+        Left = 658
+        Height = 190
+        Top = 94
+        Width = 2
+        Angle = 90
+        DrawData.Strings = (
+          '1 0'
+          '0 0'
+        )
+        DrawKind = dkCustom
+      end
+      object DBE26: TRLDBText
+        Left = 507
+        Height = 16
+        Top = 104
+        Width = 20
+        Alignment = taCenter
+        DataField = 'B1'
+        DataSource = dsImpCartelas
+      end
+      object DBE27: TRLDBText
+        Left = 550
+        Height = 16
+        Top = 104
+        Width = 14
+        Alignment = taCenter
+        DataField = 'I1'
+        DataSource = dsImpCartelas
+      end
+      object DBE28: TRLDBText
+        Left = 587
+        Height = 16
+        Top = 104
+        Width = 20
+        Alignment = taCenter
+        DataField = 'N1'
+        DataSource = dsImpCartelas
+      end
+      object DBE29: TRLDBText
+        Left = 627
+        Height = 16
+        Top = 104
+        Width = 22
+        Alignment = taCenter
+        DataField = 'G1'
+        DataSource = dsImpCartelas
+      end
+      object DBE30: TRLDBText
+        Left = 668
+        Height = 16
+        Top = 104
+        Width = 22
+        Alignment = taCenter
+        DataField = 'O1'
+        DataSource = dsImpCartelas
+      end
+      object DBE31: TRLDBText
+        Left = 507
+        Height = 16
+        Top = 142
+        Width = 20
+        Alignment = taCenter
+        DataField = 'B2'
+        DataSource = dsImpCartelas
+      end
+      object DBE32: TRLDBText
+        Left = 550
+        Height = 16
+        Top = 142
+        Width = 14
+        Alignment = taCenter
+        DataField = 'I2'
+        DataSource = dsImpCartelas
+      end
+      object DBE33: TRLDBText
+        Left = 587
+        Height = 16
+        Top = 142
+        Width = 20
+        Alignment = taCenter
+        DataField = 'N2'
+        DataSource = dsImpCartelas
+      end
+      object DBE34: TRLDBText
+        Left = 627
+        Height = 16
+        Top = 142
+        Width = 22
+        Alignment = taCenter
+        DataField = 'G2'
+        DataSource = dsImpCartelas
+      end
+      object DBE35: TRLDBText
+        Left = 668
+        Height = 16
+        Top = 142
+        Width = 22
+        Alignment = taCenter
+        DataField = 'O2'
+        DataSource = dsImpCartelas
+      end
+      object DBE36: TRLDBText
+        Left = 507
+        Height = 16
+        Top = 180
+        Width = 20
+        Alignment = taCenter
+        DataField = 'B3'
+        DataSource = dsImpCartelas
+      end
+      object DBE37: TRLDBText
+        Left = 550
+        Height = 16
+        Top = 181
+        Width = 14
+        Alignment = taCenter
+        DataField = 'I3'
+        DataSource = dsImpCartelas
+      end
+      object DBE38: TRLDBText
+        Left = 587
+        Height = 16
+        Top = 180
+        Width = 20
+        Alignment = taCenter
+        DataField = 'N3'
+        DataSource = dsImpCartelas
+      end
+      object DBE39: TRLDBText
+        Left = 627
+        Height = 16
+        Top = 180
+        Width = 22
+        Alignment = taCenter
+        DataField = 'G3'
+        DataSource = dsImpCartelas
+      end
+      object DBE40: TRLDBText
+        Left = 668
+        Height = 16
+        Top = 180
+        Width = 22
+        Alignment = taCenter
+        DataField = 'O3'
+        DataSource = dsImpCartelas
+      end
+      object DBE41: TRLDBText
+        Left = 507
+        Height = 16
+        Top = 217
+        Width = 20
+        Alignment = taCenter
+        DataField = 'B4'
+        DataSource = dsImpCartelas
+      end
+      object DBE42: TRLDBText
+        Left = 550
+        Height = 16
+        Top = 217
+        Width = 14
+        Alignment = taCenter
+        DataField = 'I4'
+        DataSource = dsImpCartelas
+      end
+      object DBE43: TRLDBText
+        Left = 587
+        Height = 16
+        Top = 217
+        Width = 20
+        Alignment = taCenter
+        DataField = 'N4'
+        DataSource = dsImpCartelas
+      end
+      object DBE44: TRLDBText
+        Left = 627
+        Height = 16
+        Top = 217
+        Width = 22
+        Alignment = taCenter
+        DataField = 'G4'
+        DataSource = dsImpCartelas
+      end
+      object DBE45: TRLDBText
+        Left = 668
+        Height = 16
+        Top = 217
+        Width = 22
+        Alignment = taCenter
+        DataField = 'O4'
+        DataSource = dsImpCartelas
+      end
+      object DBE46: TRLDBText
+        Left = 507
+        Height = 16
+        Top = 257
+        Width = 20
+        Alignment = taCenter
+        DataField = 'B5'
+        DataSource = dsImpCartelas
+      end
+      object DBE47: TRLDBText
+        Left = 550
+        Height = 16
+        Top = 257
+        Width = 14
+        Alignment = taCenter
+        DataField = 'I5'
+        DataSource = dsImpCartelas
+      end
+      object DBE48: TRLDBText
+        Left = 587
+        Height = 16
+        Top = 257
+        Width = 20
+        Alignment = taCenter
+        DataField = 'N5'
+        DataSource = dsImpCartelas
+      end
+      object DBE49: TRLDBText
+        Left = 627
+        Height = 16
+        Top = 257
+        Width = 22
+        Alignment = taCenter
+        DataField = 'G5'
+        DataSource = dsImpCartelas
+      end
+      object DBE50: TRLDBText
+        Left = 668
+        Height = 16
+        Top = 257
+        Width = 22
+        Alignment = taCenter
+        DataField = 'O5'
+        DataSource = dsImpCartelas
+      end
+      object RLDraw51: TRLDraw
+        Left = 496
+        Height = 32
+        Top = 62
+        Width = 203
+      end
+      object RLLabel6: TRLLabel
+        Left = 510
+        Height = 16
+        Top = 69
+        Width = 13
+        Caption = 'B'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object RLLabel7: TRLLabel
+        Left = 554
+        Height = 16
+        Top = 69
+        Width = 8
+        Caption = 'I'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object RLLabel8: TRLLabel
+        Left = 591
+        Height = 16
+        Top = 69
+        Width = 13
+        Caption = 'N'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object RLLabel9: TRLLabel
+        Left = 631
+        Height = 16
+        Top = 69
+        Width = 14
+        Caption = 'G'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object RLLabel10: TRLLabel
+        Left = 671
+        Height = 16
+        Top = 69
+        Width = 14
+        Caption = 'O'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object RLDraw52: TRLDraw
+        Left = 536
+        Height = 29
+        Top = 63
+        Width = 2
+        Angle = 90
+        DrawData.Strings = (
+          '1 0'
+          '0 0'
+        )
+        DrawKind = dkCustom
+      end
+      object RLDraw53: TRLDraw
+        Left = 576
+        Height = 30
+        Top = 63
+        Width = 2
+        Angle = 90
+        DrawData.Strings = (
+          '1 0'
+          '0 0'
+        )
+        DrawKind = dkCustom
+      end
+      object RLDraw54: TRLDraw
+        Left = 617
+        Height = 30
+        Top = 63
+        Width = 2
+        Angle = 90
+        DrawData.Strings = (
+          '1 0'
+          '0 0'
+        )
+        DrawKind = dkCustom
+      end
+      object RLDraw55: TRLDraw
+        Left = 658
+        Height = 30
+        Top = 63
+        Width = 2
+        Angle = 90
+        DrawData.Strings = (
+          '1 0'
+          '0 0'
+        )
+        DrawKind = dkCustom
+      end
+      object lbl_Premio3: TRLLabel
+        Left = 496
+        Height = 22
+        Top = 40
+        Width = 204
+        Alignment = taCenter
+        AutoSize = False
+        Caption = '2º PRÊMIO'
+        Font.Color = clBlack
+        Font.Height = -19
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object RLDraw19: TRLDraw
+        Left = 21
+        Height = 192
+        Top = 583
+        Width = 203
+        Borders.Sides = sdCustom
+        Borders.DrawLeft = False
+        Borders.DrawTop = False
+        Borders.DrawRight = False
+        Borders.DrawBottom = False
+        Color = clMoneyGreen
+        ParentColor = False
+        Transparent = False
+      end
+      object RLDraw20: TRLDraw
+        Left = 22
+        Height = 6
+        Top = 656
+        Width = 201
+        DrawKind = dkLine
+      end
+      object RLDraw21: TRLDraw
+        Left = 22
+        Height = 5
+        Top = 619
+        Width = 201
+        DrawKind = dkLine
+      end
+      object RLDraw22: TRLDraw
+        Left = 23
+        Height = 3
+        Top = 695
+        Width = 201
+        DrawKind = dkLine
+      end
+      object RLDraw23: TRLDraw
+        Left = 22
+        Height = 1
+        Top = 735
+        Width = 201
+        DrawKind = dkLine
+      end
+      object RLDraw24: TRLDraw
+        Left = 61
+        Height = 190
+        Top = 583
+        Width = 1
+        Angle = 90
+        DrawData.Strings = (
+          '1 0'
+          '0 0'
+        )
+        DrawKind = dkCustom
+      end
+      object RLDraw25: TRLDraw
+        Left = 101
+        Height = 191
+        Top = 583
+        Width = 2
+        Angle = 90
+        DrawData.Strings = (
+          '1 0'
+          '0 0'
+        )
+        DrawKind = dkCustom
+      end
+      object RLDraw26: TRLDraw
+        Left = 142
+        Height = 190
+        Top = 584
+        Width = 2
+        Angle = 90
+        DrawData.Strings = (
+          '1 0'
+          '0 0'
+        )
+        DrawKind = dkCustom
+      end
+      object RLDraw27: TRLDraw
+        Left = 183
+        Height = 190
+        Top = 584
+        Width = 2
+        Angle = 90
+        DrawData.Strings = (
+          '1 0'
+          '0 0'
+        )
+        DrawKind = dkCustom
+      end
+      object DBE51: TRLDBText
+        Left = 32
+        Height = 16
+        Top = 594
+        Width = 20
+        Alignment = taCenter
+        DataField = 'B1'
+        DataSource = dsImpCartelas
+      end
+      object DBE52: TRLDBText
+        Left = 76
+        Height = 16
+        Top = 594
+        Width = 14
+        Alignment = taCenter
+        DataField = 'I1'
+        DataSource = dsImpCartelas
+      end
+      object DBE53: TRLDBText
+        Left = 113
+        Height = 16
+        Top = 594
+        Width = 20
+        Alignment = taCenter
+        DataField = 'N1'
+        DataSource = dsImpCartelas
+      end
+      object DBE54: TRLDBText
+        Left = 152
+        Height = 16
+        Top = 594
+        Width = 22
+        Alignment = taCenter
+        DataField = 'G1'
+        DataSource = dsImpCartelas
+      end
+      object DBE55: TRLDBText
+        Left = 193
+        Height = 16
+        Top = 594
+        Width = 22
+        Alignment = taCenter
+        DataField = 'O1'
+        DataSource = dsImpCartelas
+      end
+      object DBE56: TRLDBText
+        Left = 32
+        Height = 16
+        Top = 632
+        Width = 20
+        Alignment = taCenter
+        DataField = 'B2'
+        DataSource = dsImpCartelas
+      end
+      object DBE57: TRLDBText
+        Left = 76
+        Height = 16
+        Top = 632
+        Width = 14
+        Alignment = taCenter
+        DataField = 'I2'
+        DataSource = dsImpCartelas
+      end
+      object DBE58: TRLDBText
+        Left = 113
+        Height = 16
+        Top = 632
+        Width = 20
+        Alignment = taCenter
+        DataField = 'N2'
+        DataSource = dsImpCartelas
+      end
+      object DBE59: TRLDBText
+        Left = 152
+        Height = 16
+        Top = 632
+        Width = 22
+        Alignment = taCenter
+        DataField = 'G2'
+        DataSource = dsImpCartelas
+      end
+      object DBE60: TRLDBText
+        Left = 193
+        Height = 16
+        Top = 632
+        Width = 22
+        Alignment = taCenter
+        DataField = 'O2'
+        DataSource = dsImpCartelas
+      end
+      object DBE61: TRLDBText
+        Left = 32
+        Height = 16
+        Top = 670
+        Width = 20
+        Alignment = taCenter
+        DataField = 'B3'
+        DataSource = dsImpCartelas
+      end
+      object DBE62: TRLDBText
+        Left = 76
+        Height = 16
+        Top = 671
+        Width = 14
+        Alignment = taCenter
+        DataField = 'I3'
+        DataSource = dsImpCartelas
+      end
+      object DBE63: TRLDBText
+        Left = 113
+        Height = 16
+        Top = 670
+        Width = 20
+        Alignment = taCenter
+        DataField = 'N3'
+        DataSource = dsImpCartelas
+      end
+      object DBE64: TRLDBText
+        Left = 152
+        Height = 16
+        Top = 670
+        Width = 22
+        Alignment = taCenter
+        DataField = 'G3'
+        DataSource = dsImpCartelas
+      end
+      object DBE65: TRLDBText
+        Left = 193
+        Height = 16
+        Top = 670
+        Width = 22
+        Alignment = taCenter
+        DataField = 'O3'
+        DataSource = dsImpCartelas
+      end
+      object DBE66: TRLDBText
+        Left = 32
+        Height = 16
+        Top = 707
+        Width = 20
+        Alignment = taCenter
+        DataField = 'B4'
+        DataSource = dsImpCartelas
+      end
+      object DBE67: TRLDBText
+        Left = 76
+        Height = 16
+        Top = 707
+        Width = 14
+        Alignment = taCenter
+        DataField = 'I4'
+        DataSource = dsImpCartelas
+      end
+      object DBE68: TRLDBText
+        Left = 113
+        Height = 16
+        Top = 707
+        Width = 20
+        Alignment = taCenter
+        DataField = 'N4'
+        DataSource = dsImpCartelas
+      end
+      object DBE69: TRLDBText
+        Left = 152
+        Height = 16
+        Top = 707
+        Width = 22
+        Alignment = taCenter
+        DataField = 'G4'
+        DataSource = dsImpCartelas
+      end
+      object DBE70: TRLDBText
+        Left = 193
+        Height = 16
+        Top = 707
+        Width = 22
+        Alignment = taCenter
+        DataField = 'O4'
+        DataSource = dsImpCartelas
+      end
+      object DBE71: TRLDBText
+        Left = 32
+        Height = 16
+        Top = 747
+        Width = 20
+        Alignment = taCenter
+        DataField = 'B5'
+        DataSource = dsImpCartelas
+      end
+      object DBE72: TRLDBText
+        Left = 76
+        Height = 16
+        Top = 747
+        Width = 14
+        Alignment = taCenter
+        DataField = 'I5'
+        DataSource = dsImpCartelas
+      end
+      object DBE73: TRLDBText
+        Left = 113
+        Height = 16
+        Top = 747
+        Width = 20
+        Alignment = taCenter
+        DataField = 'N5'
+        DataSource = dsImpCartelas
+      end
+      object DBE74: TRLDBText
+        Left = 152
+        Height = 16
+        Top = 747
+        Width = 22
+        Alignment = taCenter
+        DataField = 'G5'
+        DataSource = dsImpCartelas
+      end
+      object DBE75: TRLDBText
+        Left = 193
+        Height = 16
+        Top = 747
+        Width = 22
+        Alignment = taCenter
+        DataField = 'O5'
+        DataSource = dsImpCartelas
+      end
+      object RLDraw56: TRLDraw
+        Left = 21
+        Height = 32
+        Top = 552
+        Width = 203
+      end
+      object RLLabel11: TRLLabel
+        Left = 35
+        Height = 16
+        Top = 559
+        Width = 13
+        Caption = 'B'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object RLLabel12: TRLLabel
+        Left = 79
+        Height = 16
+        Top = 559
+        Width = 8
+        Caption = 'I'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object RLLabel13: TRLLabel
+        Left = 116
+        Height = 16
+        Top = 559
+        Width = 13
+        Caption = 'N'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object RLLabel14: TRLLabel
+        Left = 156
+        Height = 16
+        Top = 559
+        Width = 14
+        Caption = 'G'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object RLLabel15: TRLLabel
+        Left = 197
+        Height = 16
+        Top = 559
+        Width = 14
+        Caption = 'O'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object RLDraw57: TRLDraw
+        Left = 61
+        Height = 29
+        Top = 553
+        Width = 2
+        Angle = 90
+        DrawData.Strings = (
+          '1 0'
+          '0 0'
+        )
+        DrawKind = dkCustom
+      end
+      object RLDraw58: TRLDraw
+        Left = 101
+        Height = 30
+        Top = 553
+        Width = 2
+        Angle = 90
+        DrawData.Strings = (
+          '1 0'
+          '0 0'
+        )
+        DrawKind = dkCustom
+      end
+      object RLDraw59: TRLDraw
+        Left = 142
+        Height = 30
+        Top = 553
+        Width = 2
+        Angle = 90
+        DrawData.Strings = (
+          '1 0'
+          '0 0'
+        )
+        DrawKind = dkCustom
+      end
+      object RLDraw60: TRLDraw
+        Left = 183
+        Height = 30
+        Top = 553
+        Width = 2
+        Angle = 90
+        DrawData.Strings = (
+          '1 0'
+          '0 0'
+        )
+        DrawKind = dkCustom
+      end
+      object RLDraw28: TRLDraw
+        Left = 258
+        Height = 192
+        Top = 583
+        Width = 203
+        Borders.Sides = sdCustom
+        Borders.DrawLeft = False
+        Borders.DrawTop = False
+        Borders.DrawRight = False
+        Borders.DrawBottom = False
+        Color = clMoneyGreen
+        ParentColor = False
+        Transparent = False
+      end
+      object RLDraw29: TRLDraw
+        Left = 259
+        Height = 6
+        Top = 656
+        Width = 201
+        DrawKind = dkLine
+      end
+      object RLDraw30: TRLDraw
+        Left = 259
+        Height = 5
+        Top = 619
+        Width = 201
+        DrawKind = dkLine
+      end
+      object RLDraw31: TRLDraw
+        Left = 260
+        Height = 3
+        Top = 695
+        Width = 201
+        DrawKind = dkLine
+      end
+      object RLDraw32: TRLDraw
+        Left = 259
+        Height = 1
+        Top = 735
+        Width = 201
+        DrawKind = dkLine
+      end
+      object RLDraw33: TRLDraw
+        Left = 298
+        Height = 190
+        Top = 583
+        Width = 1
+        Angle = 90
+        DrawData.Strings = (
+          '1 0'
+          '0 0'
+        )
+        DrawKind = dkCustom
+      end
+      object RLDraw34: TRLDraw
+        Left = 338
+        Height = 191
+        Top = 583
+        Width = 2
+        Angle = 90
+        DrawData.Strings = (
+          '1 0'
+          '0 0'
+        )
+        DrawKind = dkCustom
+      end
+      object RLDraw35: TRLDraw
+        Left = 379
+        Height = 190
+        Top = 584
+        Width = 2
+        Angle = 90
+        DrawData.Strings = (
+          '1 0'
+          '0 0'
+        )
+        DrawKind = dkCustom
+      end
+      object RLDraw36: TRLDraw
+        Left = 420
+        Height = 190
+        Top = 584
+        Width = 2
+        Angle = 90
+        DrawData.Strings = (
+          '1 0'
+          '0 0'
+        )
+        DrawKind = dkCustom
+      end
+      object DBE76: TRLDBText
+        Left = 269
+        Height = 16
+        Top = 594
+        Width = 20
+        Alignment = taCenter
+        DataField = 'B1'
+        DataSource = dsImpCartelas
+      end
+      object DBE77: TRLDBText
+        Left = 312
+        Height = 16
+        Top = 594
+        Width = 14
+        Alignment = taCenter
+        DataField = 'I1'
+        DataSource = dsImpCartelas
+      end
+      object DBE78: TRLDBText
+        Left = 349
+        Height = 16
+        Top = 594
+        Width = 20
+        Alignment = taCenter
+        DataField = 'N1'
+        DataSource = dsImpCartelas
+      end
+      object DBE79: TRLDBText
+        Left = 390
+        Height = 16
+        Top = 594
+        Width = 22
+        Alignment = taCenter
+        DataField = 'G1'
+        DataSource = dsImpCartelas
+      end
+      object DBE80: TRLDBText
+        Left = 429
+        Height = 16
+        Top = 594
+        Width = 22
+        Alignment = taCenter
+        DataField = 'O1'
+        DataSource = dsImpCartelas
+      end
+      object DBE81: TRLDBText
+        Left = 269
+        Height = 16
+        Top = 632
+        Width = 20
+        Alignment = taCenter
+        DataField = 'B2'
+        DataSource = dsImpCartelas
+      end
+      object DBE82: TRLDBText
+        Left = 312
+        Height = 16
+        Top = 632
+        Width = 14
+        Alignment = taCenter
+        DataField = 'I2'
+        DataSource = dsImpCartelas
+      end
+      object DBE83: TRLDBText
+        Left = 349
+        Height = 16
+        Top = 632
+        Width = 20
+        Alignment = taCenter
+        DataField = 'N2'
+        DataSource = dsImpCartelas
+      end
+      object DBE84: TRLDBText
+        Left = 390
+        Height = 16
+        Top = 632
+        Width = 22
+        Alignment = taCenter
+        DataField = 'G2'
+        DataSource = dsImpCartelas
+      end
+      object DBE85: TRLDBText
+        Left = 429
+        Height = 16
+        Top = 632
+        Width = 22
+        Alignment = taCenter
+        DataField = 'O2'
+        DataSource = dsImpCartelas
+      end
+      object DBE86: TRLDBText
+        Left = 269
+        Height = 16
+        Top = 670
+        Width = 20
+        Alignment = taCenter
+        DataField = 'B3'
+        DataSource = dsImpCartelas
+      end
+      object DBE87: TRLDBText
+        Left = 312
+        Height = 16
+        Top = 671
+        Width = 14
+        Alignment = taCenter
+        DataField = 'I3'
+        DataSource = dsImpCartelas
+      end
+      object DBE88: TRLDBText
+        Left = 349
+        Height = 16
+        Top = 670
+        Width = 20
+        Alignment = taCenter
+        DataField = 'N3'
+        DataSource = dsImpCartelas
+      end
+      object DBE89: TRLDBText
+        Left = 390
+        Height = 16
+        Top = 670
+        Width = 22
+        Alignment = taCenter
+        DataField = 'G3'
+        DataSource = dsImpCartelas
+      end
+      object DBE90: TRLDBText
+        Left = 429
+        Height = 16
+        Top = 670
+        Width = 22
+        Alignment = taCenter
+        DataField = 'O3'
+        DataSource = dsImpCartelas
+      end
+      object DBE91: TRLDBText
+        Left = 269
+        Height = 16
+        Top = 707
+        Width = 20
+        Alignment = taCenter
+        DataField = 'B4'
+        DataSource = dsImpCartelas
+      end
+      object DBE92: TRLDBText
+        Left = 312
+        Height = 16
+        Top = 707
+        Width = 14
+        Alignment = taCenter
+        DataField = 'I4'
+        DataSource = dsImpCartelas
+      end
+      object DBE93: TRLDBText
+        Left = 349
+        Height = 16
+        Top = 707
+        Width = 20
+        Alignment = taCenter
+        DataField = 'N4'
+        DataSource = dsImpCartelas
+      end
+      object DBE94: TRLDBText
+        Left = 390
+        Height = 16
+        Top = 707
+        Width = 22
+        Alignment = taCenter
+        DataField = 'G4'
+        DataSource = dsImpCartelas
+      end
+      object DBE95: TRLDBText
+        Left = 429
+        Height = 16
+        Top = 707
+        Width = 22
+        Alignment = taCenter
+        DataField = 'O4'
+        DataSource = dsImpCartelas
+      end
+      object DBE96: TRLDBText
+        Left = 269
+        Height = 16
+        Top = 747
+        Width = 20
+        Alignment = taCenter
+        DataField = 'B5'
+        DataSource = dsImpCartelas
+      end
+      object DBE97: TRLDBText
+        Left = 312
+        Height = 16
+        Top = 747
+        Width = 14
+        Alignment = taCenter
+        DataField = 'I5'
+        DataSource = dsImpCartelas
+      end
+      object DBE98: TRLDBText
+        Left = 349
+        Height = 16
+        Top = 747
+        Width = 20
+        Alignment = taCenter
+        DataField = 'N5'
+        DataSource = dsImpCartelas
+      end
+      object DBE99: TRLDBText
+        Left = 390
+        Height = 16
+        Top = 747
+        Width = 22
+        Alignment = taCenter
+        DataField = 'G5'
+        DataSource = dsImpCartelas
+      end
+      object DBE100: TRLDBText
+        Left = 429
+        Height = 16
+        Top = 747
+        Width = 22
+        Alignment = taCenter
+        DataField = 'O5'
+        DataSource = dsImpCartelas
+      end
+      object RLDraw61: TRLDraw
+        Left = 258
+        Height = 32
+        Top = 552
+        Width = 203
+      end
+      object RLLabel16: TRLLabel
+        Left = 272
+        Height = 16
+        Top = 559
+        Width = 13
+        Caption = 'B'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object RLLabel17: TRLLabel
+        Left = 314
+        Height = 16
+        Top = 559
+        Width = 8
+        Caption = 'I'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object RLLabel18: TRLLabel
+        Left = 354
+        Height = 16
+        Top = 559
+        Width = 13
+        Caption = 'N'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object RLLabel19: TRLLabel
+        Left = 393
+        Height = 16
+        Top = 559
+        Width = 14
+        Caption = 'G'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object RLLabel20: TRLLabel
+        Left = 433
+        Height = 16
+        Top = 559
+        Width = 14
+        Caption = 'O'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object RLDraw62: TRLDraw
+        Left = 298
+        Height = 29
+        Top = 553
+        Width = 2
+        Angle = 90
+        DrawData.Strings = (
+          '1 0'
+          '0 0'
+        )
+        DrawKind = dkCustom
+      end
+      object RLDraw63: TRLDraw
+        Left = 338
+        Height = 30
+        Top = 553
+        Width = 2
+        Angle = 90
+        DrawData.Strings = (
+          '1 0'
+          '0 0'
+        )
+        DrawKind = dkCustom
+      end
+      object RLDraw64: TRLDraw
+        Left = 379
+        Height = 30
+        Top = 553
+        Width = 2
+        Angle = 90
+        DrawData.Strings = (
+          '1 0'
+          '0 0'
+        )
+        DrawKind = dkCustom
+      end
+      object RLDraw65: TRLDraw
+        Left = 420
+        Height = 30
+        Top = 553
+        Width = 2
+        Angle = 90
+        DrawData.Strings = (
+          '1 0'
+          '0 0'
+        )
+        DrawKind = dkCustom
+      end
+      object RLDraw37: TRLDraw
+        Left = 496
+        Height = 192
+        Top = 583
+        Width = 203
+        Borders.Sides = sdCustom
+        Borders.DrawLeft = False
+        Borders.DrawTop = False
+        Borders.DrawRight = False
+        Borders.DrawBottom = False
+        Color = clMoneyGreen
+        ParentColor = False
+        Transparent = False
+      end
+      object RLDraw38: TRLDraw
+        Left = 497
+        Height = 6
+        Top = 656
+        Width = 201
+        DrawKind = dkLine
+      end
+      object RLDraw39: TRLDraw
+        Left = 497
+        Height = 5
+        Top = 619
+        Width = 201
+        DrawKind = dkLine
+      end
+      object RLDraw40: TRLDraw
+        Left = 498
+        Height = 3
+        Top = 695
+        Width = 201
+        DrawKind = dkLine
+      end
+      object RLDraw41: TRLDraw
+        Left = 497
+        Height = 1
+        Top = 735
+        Width = 201
+        DrawKind = dkLine
+      end
+      object RLDraw42: TRLDraw
+        Left = 536
+        Height = 190
+        Top = 583
+        Width = 1
+        Angle = 90
+        DrawData.Strings = (
+          '1 0'
+          '0 0'
+        )
+        DrawKind = dkCustom
+      end
+      object RLDraw43: TRLDraw
+        Left = 576
+        Height = 191
+        Top = 583
+        Width = 2
+        Angle = 90
+        DrawData.Strings = (
+          '1 0'
+          '0 0'
+        )
+        DrawKind = dkCustom
+      end
+      object RLDraw44: TRLDraw
+        Left = 617
+        Height = 190
+        Top = 584
+        Width = 2
+        Angle = 90
+        DrawData.Strings = (
+          '1 0'
+          '0 0'
+        )
+        DrawKind = dkCustom
+      end
+      object RLDraw45: TRLDraw
+        Left = 658
+        Height = 190
+        Top = 584
+        Width = 2
+        Angle = 90
+        DrawData.Strings = (
+          '1 0'
+          '0 0'
+        )
+        DrawKind = dkCustom
+      end
+      object DBE101: TRLDBText
+        Left = 507
+        Height = 16
+        Top = 594
+        Width = 20
+        Alignment = taCenter
+        DataField = 'B1'
+        DataSource = dsImpCartelas
+      end
+      object DBE102: TRLDBText
+        Left = 550
+        Height = 16
+        Top = 594
+        Width = 14
+        Alignment = taCenter
+        DataField = 'I1'
+        DataSource = dsImpCartelas
+      end
+      object DBE103: TRLDBText
+        Left = 587
+        Height = 16
+        Top = 594
+        Width = 20
+        Alignment = taCenter
+        DataField = 'N1'
+        DataSource = dsImpCartelas
+      end
+      object DBE104: TRLDBText
+        Left = 627
+        Height = 16
+        Top = 594
+        Width = 22
+        Alignment = taCenter
+        DataField = 'G1'
+        DataSource = dsImpCartelas
+      end
+      object DBE105: TRLDBText
+        Left = 668
+        Height = 16
+        Top = 594
+        Width = 22
+        Alignment = taCenter
+        DataField = 'O1'
+        DataSource = dsImpCartelas
+      end
+      object DBE106: TRLDBText
+        Left = 507
+        Height = 16
+        Top = 632
+        Width = 20
+        Alignment = taCenter
+        DataField = 'B2'
+        DataSource = dsImpCartelas
+      end
+      object DBE107: TRLDBText
+        Left = 550
+        Height = 16
+        Top = 632
+        Width = 14
+        Alignment = taCenter
+        DataField = 'I2'
+        DataSource = dsImpCartelas
+      end
+      object DBE108: TRLDBText
+        Left = 587
+        Height = 16
+        Top = 632
+        Width = 20
+        Alignment = taCenter
+        DataField = 'N2'
+        DataSource = dsImpCartelas
+      end
+      object DBE109: TRLDBText
+        Left = 627
+        Height = 16
+        Top = 632
+        Width = 22
+        Alignment = taCenter
+        DataField = 'G2'
+        DataSource = dsImpCartelas
+      end
+      object DBE110: TRLDBText
+        Left = 668
+        Height = 16
+        Top = 632
+        Width = 22
+        Alignment = taCenter
+        DataField = 'O2'
+        DataSource = dsImpCartelas
+      end
+      object DBE111: TRLDBText
+        Left = 507
+        Height = 16
+        Top = 670
+        Width = 20
+        Alignment = taCenter
+        DataField = 'B3'
+        DataSource = dsImpCartelas
+      end
+      object DBE112: TRLDBText
+        Left = 550
+        Height = 16
+        Top = 671
+        Width = 14
+        Alignment = taCenter
+        DataField = 'I3'
+        DataSource = dsImpCartelas
+      end
+      object DBE113: TRLDBText
+        Left = 587
+        Height = 16
+        Top = 670
+        Width = 20
+        Alignment = taCenter
+        DataField = 'N3'
+        DataSource = dsImpCartelas
+      end
+      object DBE114: TRLDBText
+        Left = 627
+        Height = 16
+        Top = 670
+        Width = 22
+        Alignment = taCenter
+        DataField = 'G3'
+        DataSource = dsImpCartelas
+      end
+      object DBE115: TRLDBText
+        Left = 668
+        Height = 16
+        Top = 670
+        Width = 22
+        Alignment = taCenter
+        DataField = 'O3'
+        DataSource = dsImpCartelas
+      end
+      object DBE116: TRLDBText
+        Left = 507
+        Height = 16
+        Top = 707
+        Width = 20
+        Alignment = taCenter
+        DataField = 'B4'
+        DataSource = dsImpCartelas
+      end
+      object DBE117: TRLDBText
+        Left = 550
+        Height = 16
+        Top = 707
+        Width = 14
+        Alignment = taCenter
+        DataField = 'I4'
+        DataSource = dsImpCartelas
+      end
+      object DBE118: TRLDBText
+        Left = 587
+        Height = 16
+        Top = 707
+        Width = 20
+        Alignment = taCenter
+        DataField = 'N4'
+        DataSource = dsImpCartelas
+      end
+      object DBE119: TRLDBText
+        Left = 627
+        Height = 16
+        Top = 707
+        Width = 22
+        Alignment = taCenter
+        DataField = 'G4'
+        DataSource = dsImpCartelas
+      end
+      object DBE120: TRLDBText
+        Left = 668
+        Height = 16
+        Top = 707
+        Width = 22
+        Alignment = taCenter
+        DataField = 'O4'
+        DataSource = dsImpCartelas
+      end
+      object DBE121: TRLDBText
+        Left = 507
+        Height = 16
+        Top = 747
+        Width = 20
+        Alignment = taCenter
+        DataField = 'B5'
+        DataSource = dsImpCartelas
+      end
+      object DBE122: TRLDBText
+        Left = 550
+        Height = 16
+        Top = 747
+        Width = 14
+        Alignment = taCenter
+        DataField = 'I5'
+        DataSource = dsImpCartelas
+      end
+      object DBE123: TRLDBText
+        Left = 587
+        Height = 16
+        Top = 747
+        Width = 20
+        Alignment = taCenter
+        DataField = 'N5'
+        DataSource = dsImpCartelas
+      end
+      object DBE124: TRLDBText
+        Left = 627
+        Height = 16
+        Top = 747
+        Width = 22
+        Alignment = taCenter
+        DataField = 'G5'
+        DataSource = dsImpCartelas
+      end
+      object DBE125: TRLDBText
+        Left = 668
+        Height = 16
+        Top = 747
+        Width = 22
+        Alignment = taCenter
+        DataField = 'O5'
+        DataSource = dsImpCartelas
+      end
+      object RLDraw66: TRLDraw
+        Left = 496
+        Height = 32
+        Top = 552
+        Width = 203
+      end
+      object RLLabel21: TRLLabel
+        Left = 510
+        Height = 16
+        Top = 559
+        Width = 13
+        Caption = 'B'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object RLLabel22: TRLLabel
+        Left = 554
+        Height = 16
+        Top = 559
+        Width = 8
+        Caption = 'I'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object RLLabel23: TRLLabel
+        Left = 591
+        Height = 16
+        Top = 559
+        Width = 13
+        Caption = 'N'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object RLLabel24: TRLLabel
+        Left = 631
+        Height = 16
+        Top = 559
+        Width = 14
+        Caption = 'G'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object RLLabel25: TRLLabel
+        Left = 671
+        Height = 16
+        Top = 559
+        Width = 14
+        Caption = 'O'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object RLDraw67: TRLDraw
+        Left = 536
+        Height = 29
+        Top = 553
+        Width = 2
+        Angle = 90
+        DrawData.Strings = (
+          '1 0'
+          '0 0'
+        )
+        DrawKind = dkCustom
+      end
+      object RLDraw68: TRLDraw
+        Left = 576
+        Height = 30
+        Top = 553
+        Width = 2
+        Angle = 90
+        DrawData.Strings = (
+          '1 0'
+          '0 0'
+        )
+        DrawKind = dkCustom
+      end
+      object RLDraw69: TRLDraw
+        Left = 617
+        Height = 30
+        Top = 553
+        Width = 2
+        Angle = 90
+        DrawData.Strings = (
+          '1 0'
+          '0 0'
+        )
+        DrawKind = dkCustom
+      end
+      object RLDraw70: TRLDraw
+        Left = 658
+        Height = 30
+        Top = 553
+        Width = 2
+        Angle = 90
+        DrawData.Strings = (
+          '1 0'
+          '0 0'
+        )
+        DrawKind = dkCustom
+      end
+      object lbl_Premio4: TRLLabel
+        Left = 21
+        Height = 22
+        Top = 528
+        Width = 204
+        Alignment = taCenter
+        AutoSize = False
+        Caption = '3º PRÊMIO'
+        Font.Color = clBlack
+        Font.Height = -19
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object lbl_Premio5: TRLLabel
+        Left = 258
+        Height = 22
+        Top = 528
+        Width = 204
+        Alignment = taCenter
+        AutoSize = False
+        Caption = '4º PRÊMIO'
+        Font.Color = clBlack
+        Font.Height = -19
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object lbl_Premio6: TRLLabel
+        Left = 496
+        Height = 22
+        Top = 528
+        Width = 204
+        Alignment = taCenter
+        AutoSize = False
+        Caption = '5º PRÊMIO'
+        Font.Color = clBlack
+        Font.Height = -19
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object lb_nmPremio1: TRLLabel
+        Left = 21
+        Height = 16
+        Top = 290
+        Width = 202
+        Alignment = taCenter
+        AutoSize = False
+        Font.Color = clBlack
+        Font.Height = -12
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object lb_nmPremio2: TRLLabel
+        Left = 496
+        Height = 16
+        Top = 290
+        Width = 204
+        Alignment = taCenter
+        AutoSize = False
+        Font.Color = clBlack
+        Font.Height = -12
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object lb_nmPremio3: TRLLabel
+        Left = 21
+        Height = 16
+        Top = 778
+        Width = 202
+        Alignment = taCenter
+        AutoSize = False
+        Font.Color = clBlack
+        Font.Height = -12
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object lb_nmPremio4: TRLLabel
+        Left = 259
+        Height = 16
+        Top = 778
+        Width = 202
+        Alignment = taCenter
+        AutoSize = False
+        Font.Color = clBlack
+        Font.Height = -12
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object lb_nmPremio5: TRLLabel
+        Left = 496
+        Height = 16
+        Top = 778
+        Width = 202
+        Alignment = taCenter
+        AutoSize = False
+        Font.Color = clBlack
+        Font.Height = -12
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object RLDraw72: TRLDraw
+        Left = 8
+        Height = 58
+        Top = 872
+        Width = 704
+      end
+      object RLLabel26: TRLLabel
+        Left = 8
+        Height = 16
+        Top = 854
+        Width = 706
+        Alignment = taCenter
+        AutoSize = False
+        Caption = 'CHAVE DE CONFERÊNCIA'
+      end
+      object RLDBText1: TRLDBText
+        Left = 11
+        Height = 16
+        Top = 895
+        Width = 698
+        Alignment = taCenter
+        AutoSize = False
+        DataField = 'CHAVE'
+        DataSource = dsImpCartelas
+        Font.Color = clBlack
+        Font.Height = -15
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object RLLabel27: TRLLabel
+        Left = 526
+        Height = 16
+        Top = 10
+        Width = 67
+        Caption = 'Cartela Nº:'
+      end
+      object RLDBText2: TRLDBText
+        Left = 600
+        Height = 16
+        Top = 10
+        Width = 109
+        Alignment = taRightJustify
+        AutoSize = False
+        DataField = 'NUMERO'
+        DataSource = dsImpCartelas
+        Font.Color = clBlack
+        Font.Height = -15
+        Font.Name = 'Segoe UI'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+    end
+    object RLBand3: TRLBand
+      Left = 38
+      Height = 64
+      Top = 1014
+      Width = 718
+      BandType = btFooter
+      object RLDraw71: TRLDraw
+        Left = 8
+        Height = 43
+        Top = 13
+        Width = 706
+      end
+      object lb_Assinatura: TRLLabel
+        Left = 11
+        Height = 16
+        Top = 13
+        Width = 66
+        Caption = 'Assinatura'
+      end
+    end
+  end
+  object qrImpCartelas: TZQuery
+    Connection = DM.conexao
+    SQL.Strings = (
+      'Select * from cartelas where numero>=:inicio and numero<=:final'
+    )
+    Params = <    
+      item
+        DataType = ftInteger
+        Name = 'inicio'
+        ParamType = ptInput
+        Value = '0'
+      end    
+      item
+        DataType = ftInteger
+        Name = 'final'
+        ParamType = ptInput
+        Value = '0'
+      end>
+    Left = 192
+    Top = 8
+    ParamData = <    
+      item
+        DataType = ftInteger
+        Name = 'inicio'
+        ParamType = ptInput
+        Value = '0'
+      end    
+      item
+        DataType = ftInteger
+        Name = 'final'
+        ParamType = ptInput
+        Value = '0'
+      end>
+    object qrImpCartelasNUMERO: TLargeintField
+      FieldKind = fkData
+      FieldName = 'NUMERO'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object qrImpCartelasB1: TLongintField
+      FieldKind = fkData
+      FieldName = 'B1'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object qrImpCartelasB2: TLongintField
+      FieldKind = fkData
+      FieldName = 'B2'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object qrImpCartelasB3: TLongintField
+      FieldKind = fkData
+      FieldName = 'B3'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object qrImpCartelasB4: TLongintField
+      FieldKind = fkData
+      FieldName = 'B4'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object qrImpCartelasB5: TLongintField
+      FieldKind = fkData
+      FieldName = 'B5'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object qrImpCartelasI1: TLongintField
+      FieldKind = fkData
+      FieldName = 'I1'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object qrImpCartelasI2: TLongintField
+      FieldKind = fkData
+      FieldName = 'I2'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object qrImpCartelasI3: TLongintField
+      FieldKind = fkData
+      FieldName = 'I3'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object qrImpCartelasI4: TLongintField
+      FieldKind = fkData
+      FieldName = 'I4'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object qrImpCartelasI5: TLongintField
+      FieldKind = fkData
+      FieldName = 'I5'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object qrImpCartelasN1: TLongintField
+      FieldKind = fkData
+      FieldName = 'N1'
+      Index = 11
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object qrImpCartelasN2: TLongintField
+      FieldKind = fkData
+      FieldName = 'N2'
+      Index = 12
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object qrImpCartelasN3: TLongintField
+      FieldKind = fkData
+      FieldName = 'N3'
+      Index = 13
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object qrImpCartelasN4: TLongintField
+      FieldKind = fkData
+      FieldName = 'N4'
+      Index = 14
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object qrImpCartelasN5: TLongintField
+      FieldKind = fkData
+      FieldName = 'N5'
+      Index = 15
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object qrImpCartelasG1: TLongintField
+      FieldKind = fkData
+      FieldName = 'G1'
+      Index = 16
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object qrImpCartelasG2: TLongintField
+      FieldKind = fkData
+      FieldName = 'G2'
+      Index = 17
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object qrImpCartelasG3: TLongintField
+      FieldKind = fkData
+      FieldName = 'G3'
+      Index = 18
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object qrImpCartelasG4: TLongintField
+      FieldKind = fkData
+      FieldName = 'G4'
+      Index = 19
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object qrImpCartelasG5: TLongintField
+      FieldKind = fkData
+      FieldName = 'G5'
+      Index = 20
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object qrImpCartelasO1: TLongintField
+      FieldKind = fkData
+      FieldName = 'O1'
+      Index = 21
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object qrImpCartelasO2: TLongintField
+      FieldKind = fkData
+      FieldName = 'O2'
+      Index = 22
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object qrImpCartelasO3: TLongintField
+      FieldKind = fkData
+      FieldName = 'O3'
+      Index = 23
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object qrImpCartelasO4: TLongintField
+      FieldKind = fkData
+      FieldName = 'O4'
+      Index = 24
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object qrImpCartelasO5: TLongintField
+      FieldKind = fkData
+      FieldName = 'O5'
+      Index = 25
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object qrImpCartelasCHAVE: TStringField
+      FieldKind = fkData
+      FieldName = 'CHAVE'
+      Index = 26
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 60
+    end
+  end
+  object dsImpCartelas: TDataSource
+    DataSet = qrImpCartelas
+    Left = 288
+    Top = 8
+  end
+end

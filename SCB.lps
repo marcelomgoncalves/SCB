@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="12"/>
+    <BuildModes Active="Default"/>
+    <Units>
+      <Unit>
+        <Filename Value="SCB.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="4"/>
+        <CursorPos X="23" Y="25"/>
+        <UsageCount Value="45"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="ufrmprincipal.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmPrincipal"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uFrmprincipal"/>
+        <TopLine Value="34"/>
+        <CursorPos X="34" Y="68"/>
+        <UsageCount Value="45"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="udm.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DM"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <UnitName Value="uDM"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="19"/>
+        <CursorPos X="41" Y="26"/>
+        <UsageCount Value="45"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="ufrminformacoes.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmInformacoes"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="ufrmInformacoes"/>
+        <EditorIndex Value="3"/>
+        <TopLine Value="71"/>
+        <CursorPos X="28" Y="91"/>
+        <UsageCount Value="45"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="ufrmgeracaocartelas.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmGeracaoCartelas"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="ufrmGeracaoCartelas"/>
+        <EditorIndex Value="2"/>
+        <TopLine Value="53"/>
+        <CursorPos X="42" Y="269"/>
+        <UsageCount Value="36"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="ufrmimpressaocartelas.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmImpressaoCartelas"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="ufrmImpressaoCartelas"/>
+        <EditorIndex Value="5"/>
+        <TopLine Value="332"/>
+        <CursorPos X="61" Y="371"/>
+        <UsageCount Value="32"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="C:\Users\Marcelo Marques\AppData\Local\lazarus\onlinepackagemanager\packages\zeosdbo\src\plain\ZPlainLoader.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="231"/>
+        <CursorPos X="46" Y="240"/>
+        <UsageCount Value="8"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit>
+      <Unit>
+        <Filename Value="C:\Users\Marcelo Marques\AppData\Local\lazarus\onlinepackagemanager\packages\zeosdbo\src\dbc\ZDbcInterbase6Utils.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="884"/>
+        <CursorPos Y="902"/>
+        <UsageCount Value="10"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit>
+      <Unit>
+        <Filename Value="udm.lfm"/>
+        <EditorIndex Value="2"/>
+        <UsageCount Value="10"/>
+        <DefaultSyntaxHighlighter Value="LFM"/>
+      </Unit>
+    </Units>
+    <JumpHistory HistoryIndex="29">
+      <Position>
+        <Filename Value="ufrmimpressaocartelas.pas"/>
+        <Caret Line="327" Column="10" TopLine="300"/>
+      </Position>
+      <Position>
+        <Filename Value="ufrmimpressaocartelas.pas"/>
+        <Caret Line="328" Column="10" TopLine="300"/>
+      </Position>
+      <Position>
+        <Filename Value="ufrmimpressaocartelas.pas"/>
+        <Caret Line="329" Column="10" TopLine="300"/>
+      </Position>
+      <Position>
+        <Filename Value="ufrmimpressaocartelas.pas"/>
+        <Caret Line="355" Column="58" TopLine="333"/>
+      </Position>
+      <Position>
+        <Filename Value="ufrmimpressaocartelas.pas"/>
+        <Caret Line="356" Column="58" TopLine="334"/>
+      </Position>
+      <Position>
+        <Filename Value="ufrmimpressaocartelas.pas"/>
+        <Caret Line="357" Column="58" TopLine="335"/>
+      </Position>
+      <Position>
+        <Filename Value="ufrmimpressaocartelas.pas"/>
+        <Caret Line="358" Column="58" TopLine="336"/>
+      </Position>
+      <Position>
+        <Filename Value="ufrmimpressaocartelas.pas"/>
+        <Caret Line="362" Column="52" TopLine="336"/>
+      </Position>
+      <Position>
+        <Filename Value="ufrmimpressaocartelas.pas"/>
+        <Caret Line="363" Column="52" TopLine="337"/>
+      </Position>
+      <Position>
+        <Filename Value="ufrmimpressaocartelas.pas"/>
+        <Caret Line="364" Column="52" TopLine="338"/>
+      </Position>
+      <Position>
+        <Filename Value="ufrmimpressaocartelas.pas"/>
+        <Caret Line="365" Column="52" TopLine="339"/>
+      </Position>
+      <Position>
+        <Filename Value="ufrmimpressaocartelas.pas"/>
+        <Caret Line="366" Column="52" TopLine="340"/>
+      </Position>
+      <Position>
+        <Filename Value="ufrmimpressaocartelas.pas"/>
+        <Caret Line="365" Column="52" TopLine="339"/>
+      </Position>
+      <Position>
+        <Filename Value="ufrmimpressaocartelas.pas"/>
+        <Caret Line="366" Column="52" TopLine="340"/>
+      </Position>
+      <Position>
+        <Filename Value="ufrmimpressaocartelas.pas"/>
+        <Caret Line="367" Column="52" TopLine="341"/>
+      </Position>
+      <Position>
+        <Filename Value="ufrmimpressaocartelas.pas"/>
+        <Caret Line="368" Column="52" TopLine="342"/>
+      </Position>
+      <Position>
+        <Filename Value="ufrmimpressaocartelas.pas"/>
+        <Caret Line="367" Column="52" TopLine="341"/>
+      </Position>
+      <Position>
+        <Filename Value="ufrmimpressaocartelas.pas"/>
+        <Caret Line="368" Column="52" TopLine="342"/>
+      </Position>
+      <Position>
+        <Filename Value="ufrmimpressaocartelas.pas"/>
+        <Caret Line="367" Column="52" TopLine="341"/>
+      </Position>
+      <Position>
+        <Filename Value="ufrmimpressaocartelas.pas"/>
+        <Caret Line="368" Column="52" TopLine="342"/>
+      </Position>
+      <Position>
+        <Filename Value="ufrmimpressaocartelas.pas"/>
+        <Caret Line="367" Column="52" TopLine="341"/>
+      </Position>
+      <Position>
+        <Filename Value="ufrmimpressaocartelas.pas"/>
+        <Caret Line="368" Column="52" TopLine="342"/>
+      </Position>
+      <Position>
+        <Filename Value="ufrmimpressaocartelas.pas"/>
+        <Caret Line="367" Column="52" TopLine="341"/>
+      </Position>
+      <Position>
+        <Filename Value="ufrmimpressaocartelas.pas"/>
+        <Caret Line="369" Column="52" TopLine="343"/>
+      </Position>
+      <Position>
+        <Filename Value="ufrmimpressaocartelas.pas"/>
+        <Caret Line="388" Column="3" TopLine="354"/>
+      </Position>
+      <Position>
+        <Filename Value="ufrmimpressaocartelas.pas"/>
+        <Caret Line="387" Column="3" TopLine="354"/>
+      </Position>
+      <Position>
+        <Filename Value="ufrmimpressaocartelas.pas"/>
+        <Caret Line="383" Column="2" TopLine="354"/>
+      </Position>
+      <Position>
+        <Filename Value="ufrmimpressaocartelas.pas"/>
+        <Caret Line="386" Column="40" TopLine="366"/>
+      </Position>
+      <Position>
+        <Filename Value="ufrmimpressaocartelas.pas"/>
+        <Caret Line="396" Column="39" TopLine="366"/>
+      </Position>
+      <Position>
+        <Filename Value="ufrmimpressaocartelas.pas"/>
+        <Caret Line="9" Column="50"/>
+      </Position>
+    </JumpHistory>
+    <RunParams>
+      <FormatVersion Value="2"/>
+      <Modes ActiveMode=""/>
+    </RunParams>
+  </ProjectSession>
+</CONFIG>

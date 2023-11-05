@@ -1,0 +1,183 @@
+object DM: TDM
+  OnCreate = DataModuleCreate
+  OldCreateOrder = False
+  Height = 413
+  HorizontalOffset = 872
+  VerticalOffset = 422
+  Width = 661
+  object conexao: TZConnection
+    ControlsCodePage = cCP_UTF8
+    Properties.Strings = (
+      'AutoEncodeStrings=True'
+      'controls_cp=CP_UTF8'
+      'codepage='
+      'RawStringEncoding=DB_CP'
+    )
+    Connected = True
+    AfterConnect = conexaoAfterConnect
+    HostName = '127.0.0.1'
+    Port = 3050
+    Database = 'C:\Users\Marcelo Marques\Documents\Embarcadero\Studio\Projects\Bingo\Dados\BINGO.FDB'
+    User = 'SYSDBA'
+    Password = 'masterkey'
+    Protocol = 'firebird'
+    Left = 176
+    Top = 80
+  end
+  object qrEvento: TZQuery
+    BeforeOpen = qrEventoBeforeOpen
+    Connection = conexao
+    SQL.Strings = (
+      'SELECT * FROM EVENTO WHERE ID = :ID'
+    )
+    Params = <    
+      item
+        Name = 'ID'
+      end>
+    Left = 208
+    Top = 216
+    ParamData = <    
+      item
+        Name = 'ID'
+      end>
+    object qrEventoID: TSmallintField
+      FieldKind = fkData
+      FieldName = 'ID'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object qrEventoDESCRICAO: TStringField
+      FieldKind = fkData
+      FieldName = 'DESCRICAO'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 200
+    end
+    object qrEventoLOCAL: TStringField
+      FieldKind = fkData
+      FieldName = 'LOCAL'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 200
+    end
+    object qrEventoDATAHORA: TStringField
+      FieldKind = fkData
+      FieldName = 'DATAHORA'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 50
+    end
+    object qrEventoPROMOTORES: TStringField
+      FieldKind = fkData
+      FieldName = 'PROMOTORES'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 200
+    end
+    object qrEventoPATROCINADORES: TStringField
+      FieldKind = fkData
+      FieldName = 'PATROCINADORES'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 200
+    end
+    object qrEventoVALORCARTELA: TFloatField
+      FieldKind = fkData
+      FieldName = 'VALORCARTELA'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qrEventoP1PREMIO: TStringField
+      FieldKind = fkData
+      FieldName = 'P1PREMIO'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 200
+    end
+    object qrEventoP2PREMIO: TStringField
+      FieldKind = fkData
+      FieldName = 'P2PREMIO'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 200
+    end
+    object qrEventoP3PREMIO: TStringField
+      FieldKind = fkData
+      FieldName = 'P3PREMIO'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 200
+    end
+    object qrEventoP4PREMIO: TStringField
+      FieldKind = fkData
+      FieldName = 'P4PREMIO'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 200
+    end
+    object qrEventoP5PREMIO: TStringField
+      FieldKind = fkData
+      FieldName = 'P5PREMIO'
+      Index = 11
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 200
+    end
+    object qrEventoMENSAGEM: TMemoField
+      FieldKind = fkData
+      FieldName = 'MENSAGEM'
+      Index = 12
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      BlobType = ftMemo
+      Transliterate = False
+    end
+    object qrEventoPREMIO_CARTELAEXTRA: TStringField
+      FieldKind = fkData
+      FieldName = 'PREMIO_CARTELAEXTRA'
+      Index = 13
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 200
+    end
+  end
+end

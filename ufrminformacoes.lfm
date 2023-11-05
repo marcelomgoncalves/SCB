@@ -1,0 +1,485 @@
+object frmInformacoes: TfrmInformacoes
+  Left = 388
+  Height = 696
+  Top = 250
+  Width = 727
+  BorderIcons = []
+  BorderStyle = bsNone
+  Caption = 'Informações do Evento'
+  ClientHeight = 696
+  ClientWidth = 727
+  Color = clBtnFace
+  KeyPreview = True
+  OnCreate = FormCreate
+  Position = poMainFormCenter
+  object Panel1: TPanel
+    Left = 0
+    Height = 37
+    Top = 0
+    Width = 727
+    Align = alTop
+    BevelOuter = bvNone
+    Caption = 'INFORMAÇÕES DO EVENTO'
+    ClientHeight = 37
+    ClientWidth = 727
+    Color = clMenuHighlight
+    Font.Color = clWhite
+    Font.Height = -21
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 0
+    object bt_fechar: TSpeedButton
+      Left = 694
+      Height = 31
+      Hint = 'Sair da Tela'
+      Top = 2
+      Width = 30
+      BorderSpacing.CellAlignHorizontal = ccaCenter
+      BorderSpacing.CellAlignVertical = ccaCenter
+      Caption = 'X'
+      Color = clRed
+      Flat = True
+      Font.Color = clWhite
+      Font.Height = -21
+      Font.Style = [fsBold]
+      Transparent = False
+      OnClick = bt_fecharClick
+      ParentFont = False
+    end
+  end
+  object GroupBox1: TGroupBox
+    Left = 13
+    Height = 303
+    Top = 338
+    Width = 699
+    Caption = '[ PREMIAÇÕES ] '
+    ClientHeight = 283
+    ClientWidth = 695
+    ParentFont = False
+    TabOrder = 2
+    object edPremio1: TDBEdit
+      Left = 16
+      Height = 23
+      Top = 23
+      Width = 665
+      DataField = 'P1PREMIO'
+      DataSource = dsEvento
+      MaxLength = 0
+      TabOrder = 0
+    end
+    object Label8: TLabel
+      Left = 16
+      Height = 21
+      Top = 3
+      Width = 81
+      Caption = '1º PRÊMIO'
+      Font.Height = -16
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object edPremio2: TDBEdit
+      Left = 16
+      Height = 23
+      Top = 68
+      Width = 665
+      DataField = 'P2PREMIO'
+      DataSource = dsEvento
+      MaxLength = 0
+      TabOrder = 1
+    end
+    object Label9: TLabel
+      Left = 16
+      Height = 21
+      Top = 48
+      Width = 81
+      Caption = '2º PRÊMIO'
+      Font.Height = -16
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object edPremio3: TDBEdit
+      Left = 16
+      Height = 23
+      Top = 113
+      Width = 665
+      DataField = 'P3PREMIO'
+      DataSource = dsEvento
+      MaxLength = 0
+      TabOrder = 2
+    end
+    object Label10: TLabel
+      Left = 16
+      Height = 21
+      Top = 93
+      Width = 81
+      Caption = '3º PRÊMIO'
+      Font.Height = -16
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object edPremio4: TDBEdit
+      Left = 16
+      Height = 23
+      Top = 158
+      Width = 665
+      DataField = 'P4PREMIO'
+      DataSource = dsEvento
+      MaxLength = 0
+      TabOrder = 3
+    end
+    object Label11: TLabel
+      Left = 16
+      Height = 21
+      Top = 138
+      Width = 81
+      Caption = '4º PRÊMIO'
+      Font.Height = -16
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object edPremio5: TDBEdit
+      Left = 16
+      Height = 23
+      Top = 204
+      Width = 665
+      DataField = 'P5PREMIO'
+      DataSource = dsEvento
+      MaxLength = 0
+      TabOrder = 4
+    end
+    object Label12: TLabel
+      Left = 16
+      Height = 21
+      Top = 184
+      Width = 81
+      Caption = '5º PRÊMIO'
+      Font.Height = -16
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object edPremioExtra: TDBEdit
+      Left = 16
+      Height = 23
+      Top = 252
+      Width = 665
+      DataField = 'PREMIO_CARTELAEXTRA'
+      DataSource = dsEvento
+      MaxLength = 0
+      TabOrder = 5
+    end
+    object Label13: TLabel
+      Left = 16
+      Height = 21
+      Top = 231
+      Width = 121
+      Caption = 'CARTELA EXTRA'
+      Font.Height = -16
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+  end
+  object GroupBox2: TGroupBox
+    Left = 13
+    Height = 293
+    Top = 45
+    Width = 699
+    Caption = ' [ DADOS DO EVENTO ]  '
+    ClientHeight = 273
+    ClientWidth = 695
+    TabOrder = 1
+    object edDescEvento: TDBEdit
+      Left = 16
+      Height = 23
+      Top = 22
+      Width = 665
+      DataField = 'DESCRICAO'
+      DataSource = dsEvento
+      MaxLength = 0
+      TabOrder = 0
+    end
+    object Label2: TLabel
+      Left = 16
+      Height = 21
+      Top = 1
+      Width = 140
+      Caption = 'Descrição do Evento'
+      Font.Height = -16
+      ParentColor = False
+      ParentFont = False
+    end
+    object edLocalEvento: TDBEdit
+      Left = 16
+      Height = 23
+      Top = 66
+      Width = 665
+      DataField = 'LOCAL'
+      DataSource = dsEvento
+      MaxLength = 0
+      TabOrder = 1
+    end
+    object Label3: TLabel
+      Left = 16
+      Height = 21
+      Top = 45
+      Width = 109
+      Caption = 'Local do Evento'
+      Font.Height = -16
+      ParentColor = False
+      ParentFont = False
+    end
+    object edDHEvento: TDBEdit
+      Left = 16
+      Height = 23
+      Top = 110
+      Width = 665
+      DataField = 'DATAHORA'
+      DataSource = dsEvento
+      MaxLength = 0
+      TabOrder = 2
+    end
+    object Label4: TLabel
+      Left = 16
+      Height = 21
+      Top = 89
+      Width = 155
+      Caption = 'Data e Hora do Evento'
+      Font.Height = -16
+      ParentColor = False
+      ParentFont = False
+    end
+    object edPromoEvento: TDBEdit
+      Left = 16
+      Height = 23
+      Top = 154
+      Width = 665
+      DataField = 'PROMOTORES'
+      DataSource = dsEvento
+      MaxLength = 0
+      TabOrder = 3
+    end
+    object Label5: TLabel
+      Left = 16
+      Height = 21
+      Top = 133
+      Width = 82
+      Caption = 'Promotores'
+      Font.Height = -16
+      ParentColor = False
+      ParentFont = False
+    end
+    object edPatrocEvento: TDBEdit
+      Left = 16
+      Height = 23
+      Top = 198
+      Width = 665
+      DataField = 'PATROCINADORES'
+      DataSource = dsEvento
+      MaxLength = 0
+      TabOrder = 4
+    end
+    object Label6: TLabel
+      Left = 16
+      Height = 21
+      Top = 178
+      Width = 103
+      Caption = 'Patrocinadores'
+      Font.Height = -16
+      ParentColor = False
+      ParentFont = False
+    end
+    object Label7: TLabel
+      Left = 16
+      Height = 21
+      Top = 222
+      Width = 110
+      Caption = 'Valor da Cartela'
+      Font.Height = -16
+      ParentColor = False
+      ParentFont = False
+    end
+    object edValorCartela: TDBEdit
+      Left = 16
+      Height = 23
+      Top = 242
+      Width = 185
+      DataField = 'VALORCARTELA'
+      DataSource = dsEvento
+      Alignment = taRightJustify
+      MaxLength = 0
+      TabOrder = 5
+    end
+  end
+  object bt_gravar: TBitBtn
+    Left = 280
+    Height = 42
+    Top = 646
+    Width = 152
+    Caption = '&GRAVAR '
+    Default = True
+    OnClick = bt_gravarClick
+    TabOrder = 3
+  end
+  object qrEvento: TZQuery
+    Connection = DM.conexao
+    SQL.Strings = (
+      'SELECT  * FROM EVENTO WHERE ID = 1 '
+    )
+    Params = <>
+    WhereMode = wmWhereAll
+    Left = 440
+    Top = 288
+    object qrEventoID: TSmallintField
+      FieldKind = fkData
+      FieldName = 'ID'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object qrEventoDESCRICAO: TStringField
+      FieldKind = fkData
+      FieldName = 'DESCRICAO'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 200
+    end
+    object qrEventoLOCAL: TStringField
+      FieldKind = fkData
+      FieldName = 'LOCAL'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 200
+    end
+    object qrEventoDATAHORA: TStringField
+      FieldKind = fkData
+      FieldName = 'DATAHORA'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 50
+    end
+    object qrEventoPROMOTORES: TStringField
+      FieldKind = fkData
+      FieldName = 'PROMOTORES'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 200
+    end
+    object qrEventoPATROCINADORES: TStringField
+      FieldKind = fkData
+      FieldName = 'PATROCINADORES'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 200
+    end
+    object qrEventoVALORCARTELA: TFloatField
+      FieldKind = fkData
+      FieldName = 'VALORCARTELA'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayFormat = '#,##0.00'
+    end
+    object qrEventoP1PREMIO: TStringField
+      FieldKind = fkData
+      FieldName = 'P1PREMIO'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 200
+    end
+    object qrEventoP2PREMIO: TStringField
+      FieldKind = fkData
+      FieldName = 'P2PREMIO'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 200
+    end
+    object qrEventoP3PREMIO: TStringField
+      FieldKind = fkData
+      FieldName = 'P3PREMIO'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 200
+    end
+    object qrEventoP4PREMIO: TStringField
+      FieldKind = fkData
+      FieldName = 'P4PREMIO'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 200
+    end
+    object qrEventoP5PREMIO: TStringField
+      FieldKind = fkData
+      FieldName = 'P5PREMIO'
+      Index = 11
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 200
+    end
+    object qrEventoMENSAGEM: TMemoField
+      FieldKind = fkData
+      FieldName = 'MENSAGEM'
+      Index = 12
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      BlobType = ftMemo
+      Transliterate = False
+    end
+    object qrEventoPREMIO_CARTELAEXTRA: TStringField
+      FieldKind = fkData
+      FieldName = 'PREMIO_CARTELAEXTRA'
+      Index = 13
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 200
+    end
+  end
+  object dsEvento: TDataSource
+    DataSet = qrEvento
+    OnStateChange = dsEventoStateChange
+    Left = 384
+    Top = 288
+  end
+end

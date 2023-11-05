@@ -1,0 +1,166 @@
+object frmGeracaoCartelas: TfrmGeracaoCartelas
+  Left = 388
+  Height = 374
+  Top = 250
+  Width = 654
+  BorderIcons = []
+  BorderStyle = bsNone
+  Caption = 'frmGeracaoCartelas'
+  ClientHeight = 374
+  ClientWidth = 654
+  Color = clBtnFace
+  KeyPreview = True
+  Position = poMainFormCenter
+  object bt_gerar: TBitBtn
+    Left = 200
+    Height = 54
+    Top = 160
+    Width = 232
+    Caption = 'GERAR CARTELAS'
+    Font.Height = -19
+    Font.Style = [fsBold]
+    OnClick = bt_gerarClick
+    ParentFont = False
+    TabOrder = 0
+  end
+  object Memo1: TMemo
+    Left = 16
+    Height = 104
+    Top = 224
+    Width = 622
+    TabOrder = 1
+  end
+  object prg: TJvSpecialProgress
+    Left = 16
+    Height = 21
+    Top = 336
+    Width = 622
+    BorderColor = clBtnFace
+    BorderStyle = bsSingle
+    EndColor = 28928
+    Flat = False
+    StartColor = clMoneyGreen
+  end
+  object Panel1: TPanel
+    Left = 0
+    Height = 37
+    Top = 0
+    Width = 654
+    Align = alTop
+    BevelOuter = bvNone
+    Caption = 'GERAÇÃO DE CARTELAS DE BINGO'
+    ClientHeight = 37
+    ClientWidth = 654
+    Color = clMenuHighlight
+    Font.Color = clWhite
+    Font.Height = -21
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 2
+    object bt_fechar: TSpeedButton
+      Left = 694
+      Height = 31
+      Hint = 'Sair da Tela'
+      Top = 2
+      Width = 30
+      BorderSpacing.CellAlignHorizontal = ccaCenter
+      BorderSpacing.CellAlignVertical = ccaCenter
+      Caption = 'X'
+      Color = clRed
+      Flat = True
+      Font.Color = clWhite
+      Font.Height = -21
+      Font.Style = [fsBold]
+      Transparent = False
+      ParentFont = False
+    end
+    object bt_fechar1: TSpeedButton
+      Left = 619
+      Height = 31
+      Hint = 'Sair da Tela'
+      Top = 2
+      Width = 30
+      BorderSpacing.CellAlignHorizontal = ccaCenter
+      BorderSpacing.CellAlignVertical = ccaCenter
+      Caption = 'X'
+      Color = clRed
+      Flat = True
+      Font.Color = clWhite
+      Font.Height = -21
+      Font.Style = [fsBold]
+      Transparent = False
+      OnClick = bt_fechar1Click
+      ParentFont = False
+    end
+  end
+  object Panel2: TPanel
+    Left = 0
+    Height = 107
+    Top = 37
+    Width = 654
+    Align = alTop
+    ClientHeight = 107
+    ClientWidth = 654
+    TabOrder = 3
+    object Label1: TLabel
+      Left = 8
+      Height = 15
+      Top = 21
+      Width = 115
+      Caption = 'Qtd. Cartelas a Gerar'
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object edQtde: TEdit
+      Left = 8
+      Height = 23
+      Top = 36
+      Width = 128
+      TabOrder = 0
+    end
+    object rgbTipo: TRadioGroup
+      Left = 168
+      Height = 48
+      Top = 13
+      Width = 474
+      AutoFill = True
+      Caption = '[ Tipo de Cartelas ] '
+      ChildSizing.LeftRightSpacing = 6
+      ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+      ChildSizing.EnlargeVertical = crsHomogenousChildResize
+      ChildSizing.ShrinkHorizontal = crsScaleChilds
+      ChildSizing.ShrinkVertical = crsScaleChilds
+      ChildSizing.Layout = cclLeftToRightThenTopToBottom
+      ChildSizing.ControlsPerLine = 3
+      ClientHeight = 28
+      ClientWidth = 470
+      Columns = 3
+      ItemIndex = 0
+      Items.Strings = (
+        'Cartela 75 Pedras'
+        'Cartela 85 Pedras'
+        'Cartela 90 Pedras'
+      )
+      OnClick = rgbTipoClick
+      TabOrder = 1
+    end
+    object chkVisualizar: TJvCheckBox
+      Left = 8
+      Height = 32
+      Top = 64
+      Width = 208
+      AutoSize = False
+      Caption = 'Visualizar Log de Geração'
+      TabOrder = 2
+      LinkedControls = <>
+    end
+  end
+  object qrAux: TZQuery
+    Connection = DM.conexao
+    Params = <>
+    Left = 480
+    Top = 152
+  end
+end
