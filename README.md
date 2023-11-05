@@ -1,5 +1,5 @@
-# SCB
-Sistema de Geração e Impressão de Cartelas de Bingo 
+# SCB 
+Sistema de Geração e Impressão de Cartelas de Bingo em Lazarus
 
 Release 1.0
 
